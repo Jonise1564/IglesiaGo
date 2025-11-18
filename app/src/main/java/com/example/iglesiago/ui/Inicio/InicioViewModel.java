@@ -1,4 +1,4 @@
-package com.example.iglesiago.ui.gallery;
+package com.example.iglesiago.ui.Inicio;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
