@@ -1,4 +1,4 @@
-package com.example.iglesiago.ui.Devocional;
+package com.example.iglesiago.ui.Contacto;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.iglesiago.databinding.FragmentDevocionalBinding;
+import com.example.iglesiago.databinding.FragmentContactoBinding;
 
-public class DevocionalFragment extends Fragment {
+public class ContactoFragment extends Fragment {
 
-    private FragmentDevocionalBinding binding;
+    private FragmentContactoBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DevocionalViewModel devocionalViewModel =
-                new ViewModelProvider(this).get(DevocionalViewModel.class);
+        ContactoViewModel contactoViewModel =
+                new ViewModelProvider(this).get(ContactoViewModel.class);
 
-        binding = FragmentDevocionalBinding.inflate(inflater, container, false);
+        binding = FragmentContactoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDevocional;
-        devocionalViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textContacto;
+        contactoViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

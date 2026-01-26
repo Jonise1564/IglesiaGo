@@ -1,16 +1,16 @@
-package com.example.iglesiago.ui.Inicio;
+package com.example.iglesiago.ui.Contacto;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class InicioViewModel extends ViewModel {
+public class ContactoViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public InicioViewModel() {
+    public ContactoViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is inicio fragment");
+        mText.setValue("This is contacto fragment");
     }
 
     public LiveData<String> getText() {

@@ -3,36 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_inicio">
 
     <fragment
         android:id="@+id/nav_inicio"
-        android:name="com.example.iglesiago.ui.IniciarSesion.HomeFragment"
+        android:name="com.example.iglesiago.ui.Inicio.Inicio"
         android:label="Inicio"
         tools:layout="@layout/fragment_inicio" />
     <fragment
         android:id="@+id/nav_iniciar_sesion"
-        android:name="com.example.iglesiago.ui.Inicio.GalleryFragment"
+        android:name="com.example.iglesiago.ui.IniciarSesion.IniciarSesionFragment"
         android:label="Iniciar Sesion"
-        tools:layout="@layout/fragment_inicio" />
+        tools:layout="@layout/fragment_iniciar_sesion" />
     <fragment
         android:id="@+id/nav_devocional"
-        android:name="com.example.iglesiago.ui.Devocional.SlideshowFragment"
+        android:name="com.example.iglesiago.ui.Devocional.DevocionalFragment"
         android:label="Devocional"
         tools:layout="@layout/fragment_devocional" />
     <fragment
         android:id="@+id/nav_contacto"
-        android:name="com.example.iglesiago.ui.Devocional.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:name="com.example.iglesiago.ui.Contacto.ContactoFragment"
+        android:label="Contacto"
         tools:layout="@layout/fragment_contacto" />
     <fragment
         android:id="@+id/nav_ubicacion"
-        android:name="com.example.iglesiago.ui.Devocional.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:name="com.example.iglesiago.ui.Ubicacion.UbicacionFragment"
+        android:label="Ubicacion"
         tools:layout="@layout/fragment_ubicacion" />
     <fragment
         android:id="@+id/nav_perfil"
-        android:name="com.example.iglesiago.ui.Devocional.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:name="com.example.iglesiago.ui.Perfil.PerfilFragment"
+        android:label="Perfil"
         tools:layout="@layout/fragment_perfil" />
 </navigation>
