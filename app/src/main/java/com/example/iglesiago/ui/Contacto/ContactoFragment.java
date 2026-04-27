@@ -24,8 +24,8 @@ public class ContactoFragment extends Fragment {
         binding = FragmentContactoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textContacto;
-        contactoViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        //final TextView textView = binding.textContacto;
+        //contactoViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

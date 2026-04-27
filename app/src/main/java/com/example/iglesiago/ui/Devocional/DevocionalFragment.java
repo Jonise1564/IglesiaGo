@@ -24,8 +24,8 @@ public class DevocionalFragment extends Fragment {
         binding = FragmentDevocionalBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDevocional;
-        devocionalViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        //final TextView textView = binding.textDevocional;
+        //devocionalViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
