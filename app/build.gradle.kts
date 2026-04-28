@@ -52,4 +52,5 @@ dependencies {
     implementation(libs.retrofit.converter.scalars)
     implementation(libs.gson)
     implementation(libs.glide)
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
 }
