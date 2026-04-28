@@ -1,12 +1,21 @@
 package com.example.iglesiago.model;
 
+import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Ensenanza implements Serializable {
     private int id;
+
+    @SerializedName("titulo")
     private String titulo;
+
+    @SerializedName("contenido")
     private String contenido;
-    private String videoUrl; // Aquí va el link de YouTube
+
+    @SerializedName("videoUrl") // Coincide con el JSON de la API
+    private String videoUrl;
+
+    @SerializedName("fechaPublicacion")
     private String fechaPublicacion;
 
     public Ensenanza() {}

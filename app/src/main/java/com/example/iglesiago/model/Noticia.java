@@ -1,72 +1,44 @@
 package com.example.iglesiago.model;
 
+import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Noticia implements Serializable {
     private int id;
-    private String titulo;
+
+    @SerializedName("imagenPortada") // Coincide con el JSON
+    private String imagenUrl;
+
+    @SerializedName("cuerpo")        // Coincide con el JSON
     private String contenido;
-    private String imagenUrl; // Antes era 'imagen'
+
+    @SerializedName("fecha")         // Coincide con el JSON
     private String fechaPublicacion;
-    private boolean activo; // Para saber si la noticia sigue vigente
 
-    public Noticia() {
-    }
+    // El título no viene en el JSON que pasaste,
+    // si la API no lo manda, podrías usar un pedazo del cuerpo como título.
+    private String titulo;
 
-    public Noticia(int id, String titulo, String contenido, String imagenUrl, String fechaPublicacion, boolean activo) {
-        this.id = id;
-        this.titulo = titulo;
-        this.contenido = contenido;
-        this.imagenUrl = imagenUrl;
-        this.fechaPublicacion = fechaPublicacion;
-        this.activo = activo;
-    }
+    public Noticia() {}
 
-    public int getId() {
-        return id;
-    }
+    // Getters y Setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public String getImagenUrl() { return imagenUrl; }
+    public void setImagenUrl(String imagenUrl) { this.imagenUrl = imagenUrl; }
+
+    public String getContenido() { return contenido; }
+    public void setContenido(String contenido) { this.contenido = contenido; }
+
+    public String getFechaPublicacion() { return fechaPublicacion; }
+    public void setFechaPublicacion(String fechaPublicacion) { this.fechaPublicacion = fechaPublicacion; }
 
     public String getTitulo() {
+        // Si el título viene nulo, devolvemos una parte del cuerpo
+        if (titulo == null && contenido != null) {
+            return contenido.substring(0, Math.min(contenido.length(), 25)) + "...";
+        }
         return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getContenido() {
-        return contenido;
-    }
-
-    public void setContenido(String contenido) {
-        this.contenido = contenido;
-    }
-
-    public String getImagenUrl() {
-        return imagenUrl;
-    }
-
-    public void setImagenUrl(String imagenUrl) {
-        this.imagenUrl = imagenUrl;
-    }
-
-    public String getFechaPublicacion() {
-        return fechaPublicacion;
-    }
-
-    public void setFechaPublicacion(String fechaPublicacion) {
-        this.fechaPublicacion = fechaPublicacion;
-    }
-
-    public boolean isActivo() {
-        return activo;
-    }
-
-    public void setActivo(boolean activo) {
-        this.activo = activo;
     }
 }

@@ -71,7 +71,11 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ApiClient {
 
-    public final static String URL_BASE = "http://192.168.88.104:5207/";
+   public final static String URL_BASE = "http://192.168.88.104:5207/";
+
+    //Desde casa
+    //public final static String URL_BASE = "http://192.168.18.14:5207/";
+
     private static IglesiaGoService iglesiaGoService;
 
     public static IglesiaGoService getApiIglesiaGo() {

@@ -19,8 +19,6 @@ public interface IglesiaGoService {
 
     // --- AUTENTICACIÓN ---
 
-    // Nota: Si en tu API usas [FromBody], NO uses @FormUrlEncoded.
-    // Usamos un objeto LoginRequest o enviamos campos sueltos.
     @POST("api/Auth/login")
     Call<String> login(@Body LoginRequest loginRequest);
 
