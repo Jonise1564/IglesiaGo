@@ -33,7 +33,7 @@ public class UbicacionFragment extends Fragment implements OnMapReadyCallback {
 
         // 2. Inicializamos el Fragmento del Mapa
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
-                .findFragmentById(R.id.map); // Asegurate que este ID esté en tu XML
+                .findFragmentById(R.id.map);
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }

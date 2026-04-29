@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="12dp"
-    android:layout_marginVertical="8dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp">
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="10dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardMaxElevation="3dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +17,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="220dp">
 
             <ImageView
                 android:id="@+id/imgVideoEnsenanza"
@@ -24,11 +26,17 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1A000000" />
+
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
                 android:layout_gravity="center"
-                android:alpha="0.8"
+                android:background="@drawable/bg_play_circle"
+                android:padding="12dp"
                 android:src="@android:drawable/ic_media_play"
                 app:tint="@color/white" />
         </FrameLayout>
@@ -37,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="20dp">
 
             <TextView
                 android:id="@+id/tvTituloEnsenanza"
@@ -45,19 +53,31 @@
                 android:layout_height="wrap_content"
                 android:text="Título de la Enseñanza"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:letterSpacing="-0.01" />
 
             <TextView
                 android:id="@+id/tvContenidoEnsenanza"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="8dp"
                 android:ellipsize="end"
-                android:maxLines="3"
+                android:maxLines="2"
+                android:lineSpacingExtra="4dp"
                 android:text="Resumen del contenido que se tratará en este video devocional..."
-                android:textColor="#666666"
-                android:textSize="14sp" />
+                android:textColor="#555555"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="VER ENSEÑANZA →"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />
 
         </LinearLayout>
     </LinearLayout>

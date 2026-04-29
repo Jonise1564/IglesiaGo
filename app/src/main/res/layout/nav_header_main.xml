@@ -2,30 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="176dp"
-    android:background="#673AB7"
+    android:layout_height="160dp"
+    android:background="@color/white"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:contentDescription="Avatar de usuario"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
+    android:padding="24dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Light"> <ImageView
+    android:id="@+id/imageView"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:contentDescription="Avatar de usuario"
+    app:srcCompat="@android:drawable/sym_def_app_icon"
+    android:layout_marginBottom="8dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="Usuario"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="IglesiaGO"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="usuario@ejemplo.com" />
+        android:text="La Punta, San Luis"
+        android:textColor="#666666"
+        android:textSize="14sp" />
+
 </LinearLayout>
