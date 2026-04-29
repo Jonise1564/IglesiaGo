@@ -9,7 +9,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
+import com.example.iglesiago.R;
 import com.example.iglesiago.databinding.FragmentIniciarSesionBinding;
 
 public class IniciarSesionFragment extends Fragment {
@@ -20,31 +22,39 @@ public class IniciarSesionFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        // Inicializamos el ViewModel
         iniciarSesionViewModel = new ViewModelProvider(this).get(IniciarSesionViewModel.class);
 
         binding = FragmentIniciarSesionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        // Configuramos el click del botón "Ingresar"
-        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = binding.etEmail.getText().toString();
-                String password = binding.etPassword.getText().toString();
+        // 1. Click del botón "Ingresar"
+        binding.btnLogin.setOnClickListener(v -> {
+            String email = binding.etEmail.getText().toString().trim();
+            String password = binding.etPassword.getText().toString().trim();
 
-                if (!email.isEmpty() && !password.isEmpty()) {
-                    // Llamamos al método de login en el ViewModel
-                    iniciarSesionViewModel.login(email, password);
-                } else {
-                    Toast.makeText(getContext(), "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show();
-                }
+            if (!email.isEmpty() && !password.isEmpty()) {
+                binding.pbLoading.setVisibility(View.VISIBLE);
+                binding.btnLogin.setEnabled(false);
+                iniciarSesionViewModel.login(email, password);
+            } else {
+                Toast.makeText(getContext(), "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show();
             }
         });
 
-        // Observamos el resultado del login (por ejemplo, si hubo un error)
+        // 2. Observar Éxito (Navegación)
+        iniciarSesionViewModel.getLoginExitoso().observe(getViewLifecycleOwner(), exitoso -> {
+            if (exitoso != null && exitoso) {
+                binding.pbLoading.setVisibility(View.GONE);
+                // IMPORTANTE: Asegurate que 'nav_inicio' sea el ID correcto en tu nav_graph.xml
+                Navigation.findNavController(requireView()).navigate(R.id.nav_inicio);
+            }
+        });
+
+        // 3. Observar Errores
         iniciarSesionViewModel.getError().observe(getViewLifecycleOwner(), mensaje -> {
             if (mensaje != null) {
+                binding.pbLoading.setVisibility(View.GONE);
+                binding.btnLogin.setEnabled(true);
                 Toast.makeText(getContext(), mensaje, Toast.LENGTH_LONG).show();
             }
         });

@@ -19,33 +19,33 @@ public interface IglesiaGoService {
 
     // --- AUTENTICACIÓN ---
 
-    @POST("api/Auth/login")
+    @POST("Auth/Login")
     Call<String> login(@Body LoginRequest loginRequest);
 
-    @GET("api/Usuarios/perfil")
+    @GET("Usuarios/perfil")
     Call<Usuario> obtenerPerfil(@Header("Authorization") String token);
 
 
     // --- NOTICIAS (Acceso Público) ---
 
-    @GET("api/NoticiasApi")
+    @GET("NoticiasApi")
     Call<List<Noticia>> obtenerNoticias();
 
 
     // --- ENSEÑANZAS (Acceso Público) ---
 
-    @GET("api/EnsenanzasApi")
+    @GET("EnsenanzasApi")
     Call<List<Ensenanza>> obtenerEnsenanzas();
 
 
 
     // --- GESTIÓN DE USUARIO (Acceso Privado) ---
 
-    @PUT("api/Usuarios/actualizar")
+    @PUT("Usuarios/actualizar")
     Call<Usuario> actualizarPerfil(@Header("Authorization") String token, @Body Usuario usuario);
 
     @FormUrlEncoded
-    @PUT("api/Usuarios/cambiarClave")
+    @PUT("Usuarios/cambiarClave")
     Call<Void> cambiarClave(
             @Header("Authorization") String token,
             @Field("currentPassword") String currentPassword,

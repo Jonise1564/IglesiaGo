@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="?android:attr/windowBackground"
     android:padding="32dp"
     tools:context=".ui.IniciarSesion.IniciarSesionFragment">
 
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/black" />
+        app:tint="?attr/colorOnSurface" />
 
     <TextView
         android:id="@+id/tvBienvenida"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="IglesiaGo"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="28sp"
         android:textStyle="bold"
         android:letterSpacing="-0.02"
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Inicia sesión para continuar"
-        android:textColor="#666666"
+        android:textColor="?android:attr/textColorSecondary"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,8 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:hint="Correo electrónico"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
+        app:boxStrokeColor="?attr/colorOnSurface"
+        app:hintTextColor="?attr/colorOnSurface"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSubtitulo">
@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:textColor="@color/black" />
+            android:textColor="?attr/colorOnSurface" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -72,9 +72,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Contraseña"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
+        app:boxStrokeColor="?attr/colorOnSurface"
+        app:hintTextColor="?attr/colorOnSurface"
         app:passwordToggleEnabled="true"
+        app:passwordToggleTint="?attr/colorOnSurface"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilEmail">
@@ -84,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:textColor="@color/black" />
+            android:textColor="?attr/colorOnSurface" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -92,9 +93,9 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="40dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="?attr/colorOnSurface"
         android:text="INGRESAR"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
         android:letterSpacing="0.1"
@@ -109,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:visibility="gone"
-        android:indeterminateTint="@color/black"
+        android:indeterminateTint="?attr/colorOnSurface"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />

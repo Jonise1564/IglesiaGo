@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="10dp"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="?attr/colorPrimary"
     app:cardCornerRadius="16dp"
     app:cardElevation="2dp"
     app:cardMaxElevation="3dp">
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Título de la Enseñanza"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:letterSpacing="-0.01" />
@@ -66,7 +66,7 @@
                 android:maxLines="2"
                 android:lineSpacingExtra="4dp"
                 android:text="Resumen del contenido que se tratará en este video devocional..."
-                android:textColor="#555555"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="15sp" />
 
             <TextView
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="VER ENSEÑANZA →"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:letterSpacing="0.1" />
