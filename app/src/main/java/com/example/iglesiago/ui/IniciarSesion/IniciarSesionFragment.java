@@ -47,6 +47,7 @@ public class IniciarSesionFragment extends Fragment {
                 binding.pbLoading.setVisibility(View.GONE);
                 // IMPORTANTE: Asegurate que 'nav_inicio' sea el ID correcto en tu nav_graph.xml
                 Navigation.findNavController(requireView()).navigate(R.id.nav_inicio);
+                requireActivity().invalidateOptionsMenu();
             }
         });
 

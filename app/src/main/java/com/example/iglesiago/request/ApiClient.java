@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
     // Asegurate de que esta IP sea la correcta de tu PC hoy
-    public final static String URL_BASE = "http://192.168.88.104:5207/api/";
+    public final static String URL_BASE = "http://192.168.88.104:5207/";
 
     private static IglesiaGoService iglesiaGoService;
 
@@ -47,4 +47,6 @@ public class ApiClient {
         SharedPreferences sp = context.getSharedPreferences("token_pref", Context.MODE_PRIVATE);
         sp.edit().clear().apply();
     }
+
+
 }

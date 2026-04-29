@@ -1,6 +1,7 @@
 package com.example.iglesiago.request;
 
 import com.example.iglesiago.model.Ensenanza;
+import com.example.iglesiago.model.LoginResponse;
 import com.example.iglesiago.model.Noticia;
 import com.example.iglesiago.model.Usuario;
 
@@ -18,34 +19,31 @@ import retrofit2.http.PUT;
 public interface IglesiaGoService {
 
     // --- AUTENTICACIÓN ---
-
+    // CAMBIO CLAVE: De Call<String> a Call<LoginResponse>
     @POST("Auth/Login")
-    Call<String> login(@Body LoginRequest loginRequest);
+    Call<LoginResponse> login(@Body LoginRequest loginRequest);
 
-    @GET("Usuarios/perfil")
+    @GET("api/Usuarios/perfil")
     Call<Usuario> obtenerPerfil(@Header("Authorization") String token);
 
 
     // --- NOTICIAS (Acceso Público) ---
-
-    @GET("NoticiasApi")
+    @GET("api/NoticiasApi")
     Call<List<Noticia>> obtenerNoticias();
 
 
     // --- ENSEÑANZAS (Acceso Público) ---
-
-    @GET("EnsenanzasApi")
+    @GET("api/EnsenanzasApi")
     Call<List<Ensenanza>> obtenerEnsenanzas();
 
 
 
     // --- GESTIÓN DE USUARIO (Acceso Privado) ---
-
-    @PUT("Usuarios/actualizar")
+    @PUT("api/Usuarios/actualizar")
     Call<Usuario> actualizarPerfil(@Header("Authorization") String token, @Body Usuario usuario);
 
     @FormUrlEncoded
-    @PUT("Usuarios/cambiarClave")
+    @PUT("api/Usuarios/cambiarClave")
     Call<Void> cambiarClave(
             @Header("Authorization") String token,
             @Field("currentPassword") String currentPassword,
