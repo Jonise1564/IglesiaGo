@@ -18,9 +18,12 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/white"
-            app:titleTextColor="@color/black"
-            app:popupTheme="@style/Theme.IglesiaGo.PopupOverlay" />
+
+            android:background="?attr/colorPrimary"
+
+            app:titleTextColor="?attr/colorOnSurface"
+
+            app:popupTheme="?attr/colorOnSurface" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
