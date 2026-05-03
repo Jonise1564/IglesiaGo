@@ -8,17 +8,16 @@
     android:orientation="vertical"
     android:padding="24dp">
 
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        android:layout_marginBottom="8dp"/>
+        android:layout_width="85dp" android:layout_height="85dp"
+        android:scaleType="centerCrop" app:srcCompat="@drawable/logo_iglesia" android:layout_marginBottom="8dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IglesiaGO"
+        android:text="Iglesia Cielos Abiertos"
         android:textColor="?attr/colorOnSurface"
         android:textSize="18sp"
         android:textStyle="bold" />

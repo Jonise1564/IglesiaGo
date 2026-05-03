@@ -10,7 +10,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
     // Asegurate de que esta IP sea la correcta de tu PC hoy
-    public final static String URL_BASE = "http://192.168.88.104:5207/";
+   // public final static String URL_BASE = "http://192.168.88.104:5207/";
+    public final static String URL_BASE = "http://192.168.18.14:5207/";
+
 
     private static IglesiaGoService iglesiaGoService;
 
